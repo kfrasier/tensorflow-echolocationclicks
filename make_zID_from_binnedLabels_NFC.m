@@ -1,6 +1,6 @@
-load('D:\WAT_HZmetadata\TPWS\ClusterBins_120dB_linear\labels\WAT_HZ_01_disk05_predLab.mat')
+load('G:\NFC_A_02_d1-3_TPWS\labels\NFC_A_02_disk01a_predLab.mat')
 load('D:\WAT_HZmetadata\TPWS\ClusterBins_120dB_linear\WAT_HZ_01_disk05_Delphin_clusters_PG0_PR95_MIN100_MOD0x_PPmin95FPincl.mat')
-load('D:\WAT_HZmetadata\TPWS\ClusterBins_120dB_linear\WAT_HZ_01_disk05_toClassify.mat')
+load('D:\WAT_HZmetadata\TPWS\ClusterBins_120dB_linear\WAT_HZ_01_disk05__toClassify.mat')
 
 probs = double(probs);
 predLabels = double(predLabels);

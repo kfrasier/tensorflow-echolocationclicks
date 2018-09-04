@@ -1,0 +1,15 @@
+baseDir, 'G:\'
+outDir, 'K:\WAT_NC_01'
+deploymentName, 'WAT_NC_01'
+tfFullPath, 'G:\DCL_HF_Dev_part1\WAT_NC_01\740_140303_invSensit.tf'
+bufferSec, 0.0025
+channelNum, 1
+highPassHz, 5000 
+lowPassHz, 100000
+filterOrder, 5
+dBppThresh, 118
+frameLengthSamples, 2000
+overlapVal, 50
+REWavExt, '(\.x)?\.wav'
+DateRE, '_(\d*)_(\d*)'
+guidedDetector, FALSE

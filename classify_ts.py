@@ -12,12 +12,13 @@ def load_ts(fileName):
 	return x_train
 
 
-directory = os.fsencode('I:/JAX13D_broad_metadata/TPWS_noMinPeakFr')
+# directory = os.fsencode('I:/JAX13D_broad_metadata/TPWS_noMinPeakFr')
+directory = os.fsencode('F:/HAT_A_06/HAT_A_06_d1-3_TPWS')
 # load trained network
 os.chdir(directory)
-model = load_model('C:/Users/Hosei/myModel_dense.h5')
-inDir ='I:/JAX13D_broad_metadata/TPWS_noMinPeakFr'
-outDir = 'I:/JAX13D_broad_metadata/TPWS_noMinPeakFr/labels'
+model = load_model('C:/Users/Hosei/myModel_dense_unsup_HAT.h5')
+inDir ='F:/HAT_A_06/HAT_A_06_d1-3_TPWS'
+outDir = 'F:/HAT_A_06/HAT_A_06_d1-3_TPWS/labels'
 for file in os.listdir(directory):
 	fileName = os.fsdecode(file)
 	if fileName.endswith("TPWS1.mat"): 
