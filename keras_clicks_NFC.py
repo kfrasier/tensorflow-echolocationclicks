@@ -12,6 +12,7 @@ import numpy as np
 import scipy.io as spio
 
 trainSetFile = 'E:/Data/John Reports/HAT05A/NFC_HAT_forNNet/NFC_HAT06A_train_1clust.mat'
+#trainSetFile = 'G:/NFC_A_02_ClusterBins_120dB/forNNet/NFC_HAT06A_train_1clust.mat'
 mat1 = h5py.File(trainSetFile, 'r')
 
 x_train = mat1['trainDataAll'].value
@@ -22,6 +23,7 @@ print(y_trainMat.shape)
 
 
 testSetFile = 'E:/Data/John Reports/HAT05A/NFC_HAT_forNNet/NFC_HAT06A_test_1clust.mat'
+#testSetFile = 'G:/NFC_A_02_ClusterBins_120dB/forNNet/NFC_HAT06A_test_1clust.mat'
 mat2 = h5py.File(testSetFile, 'r')
 x_test = mat2['testDataAll'].value
 x_test = x_test.transpose()
@@ -51,6 +53,15 @@ model.add(Dropout(0.5))
 model.add(Dense(100, activation='relu'))#kernel_regularizer=regularizers.l2(0.001)))
 model.add(Dropout(0.5))
 model.add(Dense(50, activation='relu'))#kernel_regularizer=regularizers.l2(0.001)))
+# model.add(Dense(300, activation='relu',kernel_regularizer=regularizers.l2(0.001), input_dim=300))
+# model.add(Dropout(0.5))
+# model.add(Dense(200, activation='relu',kernel_regularizer=regularizers.l2(0.001)))
+# model.add(Dropout(0.5))
+# #model.add(Dense(200, activation='relu'))
+# #model.add(Dropout(0.5))
+# model.add(Dense(100, activation='relu',kernel_regularizer=regularizers.l2(0.001)))
+# model.add(Dropout(0.5))
+# model.add(Dense(50, activation='relu',kernel_regularizer=regularizers.l2(0.001)))
 model.add(Dropout(0.5))
 model.add(Dense(11, activation='softmax'))
 
@@ -68,7 +79,11 @@ score, accuracy = model.evaluate(x_test, y_test, batch_size=batch_size, verbose=
 print("Dev loss:  ", score)
 print("Dev accuracy:  ", accuracy)
 
+<<<<<<< HEAD
 model.save('E:/Data/John Reports/HAT05A/NFC_HAT_forNNet/myModel_dense_unsup_HAT.h5')
+=======
+model.save('myModel_dense_unsup_HAT.h5')
+>>>>>>> origin/master
 # model = load_model('myModel.h5')
 testOut = model.predict_classes(x_test)
 probs = model.predict(x_test)
